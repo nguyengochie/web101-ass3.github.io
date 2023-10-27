@@ -1,0 +1,25 @@
+@media screen and (max-width: 600px) {
+    .nav-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: start;
+        flex-direction: column;
+        height: fit-content;
+        gap: 10px
+    }
+
+    .user-info-nav {
+        display: none;
+    }
+
+    .txt-nav-item {
+        border: none !important;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .user-nav-data {
+        display: none;
+    }
+}

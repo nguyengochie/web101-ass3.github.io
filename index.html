@@ -5,7 +5,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/laptop.css">
+	<link rel="stylesheet" href="./css/tablet.css">
+	<link rel="stylesheet" href="./css/mobile.css">
 	<link rel="stylesheet" href="./css/font.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,7 @@
 	<header>
 		<div id="banner" style="padding: 50px">
 			<div class="container-fluid d-flex flex-column align-items-center">
-				<h1>Nguyễn Văn A</h1>
+				<h1>Nguyễn Ngọc Hiếu</h1>
 				<span>Full Stack Developer</span>
 			</div>
 		</div>
@@ -42,10 +44,10 @@
 						</a>
 					</p>
 				</div>
-				<div class="user-info-nav px-5 py-1">
-					<div class="user-nav-data">
-						<h1 class="fw-normal fs-5 mb-0">Nguyễn Văn A</h1>
-						<span class="fs-10">Full Stack Developer</span>
+				<div class="user-info-nav">
+					<div class="circle-avatar">
+						<img alt="avatar"
+							src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/353042147_2581669531971430_4176675384355622015_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=6J-IjpjDVtsAX9Sam9q&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBFELUplDsD0PwaT76oSn3Uwv-jy2oVBd9rOcFbEybX0A&oe=65412768" />
 					</div>
 				</div>
 				<div class="txt-nav-item">
@@ -83,20 +85,46 @@
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-12" id="personal-info">
 						<h1 class="section-title fw-normal fs-3">Thông tin cá nhân</h1>
-						<ul class="list-info mt-4 info fs-6 list-unstyled">
-							<li class="text-muted"><span class="text-dark">Giới tính</span> : Nam</li>
-							<li class="text-muted"><span class="text-dark">Ngày sinh</span> : 19/05/2000</li>
-							<li class="text-muted"><span class="text-dark">Điện thoại</span> : (+84) 912398xxx</li>
-							<li class="text-muted"><span class="text-dark">Email</span> : sinhvien@funix.edu.vn</li>
-							<li class="text-muted"><span class="text-dark">Địa chỉ</span> : Số 10, đường 10, Hà Nội</li>
-							<li class="text-muted"><span class="text-dark">Website</span> : https://abc.tech</li>
-						</ul>
-						<div class="social-icon-list d-flex gap-2">
-							<i class="icon-twitter"></i>
-							<i class="icon-facebook-circled"></i>
-							<i class="icon-gplus"></i>
-							<i class="icon-linkedin-circled"></i>
+						<div class="d-none" id="user-info-container">
+							<ul class="list-info mt-4 info fs-6 list-unstyled ">
+								<li class="text-muted"><span class="text-dark">Giới tính</span> : Nam</li>
+								<li class="text-muted"><span class="text-dark">Ngày sinh</span> : 12/12/1888</li>
+								<li class="text-muted"><span class="text-dark">Điện thoại</span> : (+84) 912398xxx</li>
+								<li class="text-muted"><span class="text-dark">Email</span> : hieunnfx31051@funix.edu.vn
+								</li>
+								<li class="text-muted"><span class="text-dark">Địa chỉ</span> : Số 10, đường 10, Hà Nội
+								</li>
+								<li class="text-muted"><span class="text-dark">Website</span> : https://abc.tech</li>
+							</ul>
+							<div class="social-icon-list d-flex gap-2">
+								<i class="icon-twitter"></i>
+								<i class="icon-facebook-circled"></i>
+								<i class="icon-gplus"></i>
+								<i class="icon-linkedin-circled"></i>
+							</div>
 						</div>
+						<div id="email-validation" class="my-4">
+							<div class="form-group">
+								<form id="email-form">
+									<input type="email" class="form-control" id="input-email-field"
+										placeholder="Enter email" />
+									<label id="guide-email-input" for="email-input" class="mb-4"><small>Hãy nhập email
+											để xác
+											thực</small></label>
+									<label id="email-error" for="email-error"
+										class="mb-4 text-danger d-none"><small>Email
+											không hợp
+											lệ!</small></label>
+									<div class="d-flex align-items-center">
+										<button id="btn-submit" class="btn btn-primary btn-sm btn-submit">
+											Submit
+										</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -108,183 +136,236 @@
 					<!-- row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4 gx-0 g-md-4 g-xl-5 -->
 					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 						<div class="skill-content ">
-							<div class="d-flex justify-content-between align-items-start">
-								<h1>Kinh nghiệm</h1>
-								<i class="ic-toolbox fs-3 text-secondary"></i>
+							<div>
+								<div class="d-flex justify-content-between align-items-start">
+									<h1>Kinh nghiệm</h1>
+									<i class="ic-toolbox fs-3 text-secondary"></i>
+								</div>
+								<button onclick="onClickBtnViewMore(event)" id="btn_experience-container"
+									class="btn-view-more v-none"> <i style="pointer-events: none;"
+										class="text-black icon-down-big"></i>
+									<span style="pointer-events: none;">VIEW MORE</span>
+								</button>
 							</div>
 
-							<ul class="mt-5 text-muted fs-6 list-exp">
-								<li>
-									<p class="text-dark">Full Stack Developer - Công ty Y</p>
-									<i>05/2022 - Hiện tại</i>
-									<ul class="list-dashed list-unstyled">
-										<li>Xây dựng, phát triển Website dựa trên thiết kế và yêu cầu đã có.</li>
-										<li>Phân tích và thiết kế Database, sử dụng các hệ quản trị CSDL (MySQL,
-											SQLServer,
-											NoSQL,
-											...) và viết được các câu truy vấn.</li>
-										<li>Sử dụng ngôn ngữ server-side (Python, Java, ...) để xây dựng các Web Server
-										</li>
-									</ul>
-								</li>
-							</ul>
+							<div id="experience-container" class="min-h-300 h-100 hidde-skill-info">
+								<ul class="mt-5 text-muted fs-6 list-exp">
+									<li>
+										<p class="text-dark">Full Stack Developer - Công ty Y</p>
+										<i>05/2022 - Hiện tại</i>
+										<ul class="list-dashed list-unstyled">
+											<li>Xây dựng, phát triển Website dựa trên thiết kế và yêu cầu đã có.</li>
+											<li>Phân tích và thiết kế Database, sử dụng các hệ quản trị CSDL (MySQL,
+												SQLServer,
+												NoSQL,
+												...) và viết được các câu truy vấn.</li>
+											<li>Sử dụng ngôn ngữ server-side (Python, Java, ...) để xây dựng các Web
+												Server
+											</li>
+										</ul>
+									</li>
+								</ul>
 
-							<ul class="mt-5 text-muted fs-6 list-exp">
-								<li>
-									<p class="text-dark">Web Designer - Công ty X</p>
-									<i>05/2022 - Hiện tại</i>
-									<ul class="list-dashed list-unstyled">
-										<li>Thiết kế Website dự trên yêu cầu của khách hàng.</li>
-										<li>Sử dụng các công cụ: Figma, Canva, PTS.</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-						<div class="skill-content ">
-							<div class="d-flex justify-content-between align-items-start">
-								<h1>Học vấn</h1>
-								<i class="ic-pencil fs-3 text-secondary"></i>
-							</div>
-
-							<ul class="mt-5 text-muted fs-6 list-exp">
-								<li>
-									<p class="text-dark">FUNiX</p>
-									<i>06/2021 - 05/2022</i>
-									<ul class="list-dashed list-unstyled">
-										<li>Tốt nghiệp chứng chỉ doanh nghiệp nhánh Fullstack.</li>
-										<li>GPA: 9 / 10</li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="mt-5 text-muted fs-6 list-exp">
-								<li>
-									<p class="text-dark">Cử nhân - ĐHFPT</p>
-									<i>08/2016 - 07/2019</i>
-									<ul class="list-dashed list-unstyled">
-										<li>Chuyên ngành: Kỹ thuật phần mềm.</li>
-										<li>GPA: 3.2 / 4</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-						<div class="skill-content ">
-							<div class="d-flex justify-content-between align-items-start">
-								<h1>Hoạt động</h1>
-								<i class="ic-toolbox fs-3 text-secondary"></i>
-							</div>
-
-							<ul class="mt-5 text-muted fs-6 list-exp">
-								<li>
-									<p class="text-dark">FPT Edu Hackathon 2019</p>
-									<i>03/2019 - 05/2019</i>
-									<ul class="list-dashed list-unstyled">
-										<li>Giải 3 bảng A</li>
-										<li>Đề tài: Trang web về phân loại rác thải.</li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="mt-5 text-muted fs-6 list-exp">
-								<li>
-									<p class="text-dark">Câu lạc bộ Z</p>
-									<i>08/2016 - 08/2017</i>
-									<ul class="list-dashed list-unstyled">
-										<li>Trưởng ban chuyên môn</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-						<div class="skill-content ">
-							<div class="d-flex justify-content-between align-items-start">
-								<h1>Sở thích</h1>
-								<i class="ic-telescope fs-3 text-secondary"></i>
-							</div>
-							<div class="d-flex gap-3 list-icon-favor mt-4">
-								<div class="d-flex flex-column align-items-center">
-									<div class=" circle-icon-outlined"><i class="ic-megaphone"></i></div>
-									<p>Âm nhạc</p>
-								</div>
-								<div class="d-flex flex-column align-items-center">
-									<div class="circle-icon-outlined"><i class="ic-strategy"></i></div>
-									<p>Chơi game</p>
-								</div>
-								<div class="d-flex flex-column align-items-center">
-									<div class="circle-icon-outlined"><i class="ic-hotairballoon"></i></div>
-									<p>Du lịch</p>
-								</div>
-								<div class="d-flex flex-column align-items-center">
-									<div class="circle-icon-outlined"><i class="ic-basket"></i></div>
-									<p>Nấu ăn</p>
-								</div>
+								<ul class="mt-5 text-muted fs-6 list-exp">
+									<li>
+										<p class="text-dark">Web Designer - Công ty X</p>
+										<i>05/2022 - Hiện tại</i>
+										<ul class="list-dashed list-unstyled">
+											<li>Thiết kế Website dự trên yêu cầu của khách hàng.</li>
+											<li>Sử dụng các công cụ: Figma, Canva, PTS.</li>
+										</ul>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 						<div class="skill-content ">
-							<div class="d-flex justify-content-between align-items-start">
-								<h1>Ngôn ngữ</h1>
-								<i class="ic-mic fs-3 text-secondary"></i>
-							</div>
-							<div class="mt-4">
-								<p class="txt-14">Tiếng Anh - IELTS 7.0</p>
-								<div class="d-flex gap-3 mt-2">
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item"></div>
+							<div>
+								<div class="d-flex justify-content-between align-items-start">
+									<h1>Học vấn</h1>
+									<i class="ic-pencil fs-3 text-secondary"></i>
 								</div>
+								<button onclick="onClickBtnViewMore(event)" id="btn_education-container"
+									class="btn-view-more v-none"> <i style="pointer-events: none;"
+										class="text-black icon-down-big"></i>
+									<span style="pointer-events: none;">
+										VIEW MORE</span></button>
 							</div>
-							<div class="mt-4">
-								<p class="txt-14">Tiếng Nhật - JLPT N4</p>
-								<div class="d-flex gap-3 mt-2">
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item"></div>
-									<div class="inprogress-item"></div>
+							<div id="education-container" class="min-h-300 hidde-skill-info">
+								<ul class="mt-5 text-muted fs-6 list-exp">
+									<li>
+										<p class="text-dark">FUNiX</p>
+										<i>06/2021 - 05/2022</i>
+										<ul class="list-dashed list-unstyled">
+											<li>Tốt nghiệp chứng chỉ doanh nghiệp nhánh Fullstack.</li>
+											<li>GPA: 9 / 10</li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="mt-5 text-muted fs-6 list-exp">
+									<li>
+										<p class="text-dark">Cử nhân - ĐHFPT</p>
+										<i>08/2016 - 07/2019</i>
+										<ul class="list-dashed list-unstyled">
+											<li>Chuyên ngành: Kỹ thuật phần mềm.</li>
+											<li>GPA: 3.2 / 4</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+						<div class="skill-content ">
+							<div>
+								<div class="d-flex justify-content-between align-items-start">
+									<h1>Hoạt động</h1>
+									<i class="ic-toolbox fs-3 text-secondary"></i>
+								</div>
+								<button onclick="onClickBtnViewMore(event)" id="btn_activity-container"
+									class="btn-view-more v-none"> <i style="pointer-events: none;"
+										class="text-black icon-down-big"></i>
+									<span style="pointer-events: none;">
+										VIEW MORE</span></button>
+							</div>
+							<div id="activity-container" class="min-h-300 hidde-skill-info">
+								<ul class="mt-5 text-muted fs-6 list-exp">
+									<li>
+										<p class="text-dark">FPT Edu Hackathon 2019</p>
+										<i>03/2019 - 05/2019</i>
+										<ul class="list-dashed list-unstyled">
+											<li>Giải 3 bảng A</li>
+											<li>Đề tài: Trang web về phân loại rác thải.</li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="mt-5 text-muted fs-6 list-exp">
+									<li>
+										<p class="text-dark">Câu lạc bộ Z</p>
+										<i>08/2016 - 08/2017</i>
+										<ul class="list-dashed list-unstyled">
+											<li>Trưởng ban chuyên môn</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+						<div class="skill-content">
+							<div>
+								<div class="d-flex justify-content-between align-items-start">
+									<h1>Sở thích</h1>
+									<i class="ic-telescope fs-3 text-secondary"></i>
+								</div>
+								<button onclick="onClickBtnViewMore(event)" id="btn_habbit-container"
+									class="btn-view-more v-none"> <i style="pointer-events: none;"
+										class="text-black icon-down-big"></i>
+									<span style="pointer-events: none;">
+										VIEW MORE</span></button>
+							</div>
+							<div id="habbit-container" class="min-h-300 hidde-skill-info">
+								<div class="d-flex gap-3 justify-content-around list-icon-favor mt-4">
+									<div class="d-flex flex-column align-items-center">
+										<div class=" circle-icon-outlined"><i class="ic-megaphone"></i></div>
+										<p>Âm nhạc</p>
+									</div>
+									<div class="d-flex flex-column align-items-center">
+										<div class="circle-icon-outlined"><i class="ic-strategy"></i></div>
+										<p>Chơi game</p>
+									</div>
+									<div class="d-flex flex-column align-items-center">
+										<div class="circle-icon-outlined"><i class="ic-hotairballoon"></i></div>
+										<p>Du lịch</p>
+									</div>
+									<div class="d-flex flex-column align-items-center">
+										<div class="circle-icon-outlined"><i class="ic-basket"></i></div>
+										<p>Nấu ăn</p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 						<div class="skill-content ">
-							<div class="d-flex justify-content-between align-items-start">
-								<h1>Kỹ năng</h1>
-								<i class="ic-tools-2 fs-3 text-secondary"></i>
+							<div>
+								<div class="d-flex justify-content-between align-items-start">
+									<h1>Ngôn ngữ</h1>
+									<i class="ic-mic fs-3 text-secondary"></i>
+								</div>
+								<button onclick="onClickBtnViewMore(event)" id="btn_language-container"
+									class="btn-view-more v-none"> <i style="pointer-events: none;"
+										class="text-black icon-down-big"></i>
+									<span style="pointer-events: none;">
+										VIEW MORE</span></button>
+							</div>
+							<div id="language-container" class="min-h-300 hidde-skill-info">
+								<div class="mt-4">
+									<p class="txt-14">Tiếng Anh - IELTS 7.0</p>
+									<div class="d-flex gap-3 mt-2">
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item"></div>
+									</div>
+								</div>
+								<div class="mt-4">
+									<p class="txt-14">Tiếng Nhật - JLPT N4</p>
+									<div class="d-flex gap-3 mt-2">
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item"></div>
+										<div class="inprogress-item"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+						<div class="skill-content ">
+							<div>
+								<div class="d-flex justify-content-between align-items-start">
+									<h1>Kỹ năng</h1>
+									<i class="ic-tools-2 fs-3 text-secondary"></i>
+								</div>
+								<button onclick="onClickBtnViewMore(event)" id="btn_skill-container"
+									class="btn-view-more v-none"> <i style="pointer-events: none;"
+										class="text-black icon-down-big"></i>
+									<span style="pointer-events: none;">
+										VIEW MORE</span></button>
 							</div>
 
-							<div class="mt-4">
-								<p class="txt-14">HTML/CSS: Fundamental</p>
-								<div class="d-flex gap-3 mt-2">
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item"></div>
-									<div class="inprogress-item"></div>
+							<div id="skill-container" class="min-h-300 hidde-skill-info">
+								<div class="mt-4">
+									<p class="txt-14">HTML/CSS: Fundamental</p>
+									<div class="d-flex gap-3 mt-2">
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item"></div>
+										<div class="inprogress-item"></div>
+									</div>
 								</div>
-							</div>
-							<div class="mt-4">
-								<p class="txt-14">Javascript: Intermediate</p>
-								<div class="d-flex gap-3 mt-2">
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item"></div>
+								<div class="mt-4">
+									<p class="txt-14">Javascript: Intermediate</p>
+									<div class="d-flex gap-3 mt-2">
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item"></div>
+									</div>
 								</div>
-							</div>
-							<div class="mt-4">
-								<p class="txt-14">NodeJS: Intermediate</p>
-								<div class="d-flex gap-3 mt-2">
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item"></div>
+								<div class="mt-4">
+									<p class="txt-14">NodeJS: Intermediate</p>
+									<div class="d-flex gap-3 mt-2">
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item"></div>
+									</div>
 								</div>
-							</div>
-							<div class="mt-4">
-								<p class="txt-14">Bootstrap 5: Fundamental</p>
-								<div class="d-flex gap-3 mt-2">
-									<div class="inprogress-item active"></div>
-									<div class="inprogress-item "></div>
-									<div class="inprogress-item"></div>
+								<div class="mt-4">
+									<p class="txt-14">Bootstrap 5: Fundamental</p>
+									<div class="d-flex gap-3 mt-2">
+										<div class="inprogress-item active"></div>
+										<div class="inprogress-item "></div>
+										<div class="inprogress-item"></div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -515,8 +596,11 @@
 		</section>
 	</footer>
 
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+		integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+		async></script>
 	<script src="./js/script.js"></script>
+	<script src="./js/email_validation.js"></script>
 </body>
 
 </html>
