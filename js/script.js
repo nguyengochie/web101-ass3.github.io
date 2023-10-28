@@ -1,6 +1,6 @@
 let listJobEl = document.querySelector("#list-job-info");
 let mansory;
-let isTriggerMansory = false;
+let isRunning = false;
 
 window.addEventListener("load", function () {
   mansory = new Masonry(listJobEl, { percentPosition: true });
@@ -8,18 +8,18 @@ window.addEventListener("load", function () {
 
   if (window.innerWidth >= 1080) {
     mansory.destroy();
-    isTriggerMansory = false;
+    isRunning = false;
   }
 
   window.addEventListener("resize", function () {
     if (window.innerWidth < 1080) {
       if (!isTriggerMansory) {
         mansory = new Masonry(listJobEl, { percentPosition: true });
-        isTriggerMansory = true;
+        isRunning = true;
       }
     } else if (isTriggerMansory) {
       mansory.destroy();
-      isTriggerMansory = false;
+      isRunning = false;
     }
   });
 });
@@ -55,6 +55,7 @@ const onClickBtnViewMore = (event) => {
     containerEl.classList.add("hidde-skill-info");
   }
 
+  // trigger mansory layout to generate layout after change size of container
   if (window.innerWidth < 1080) {
     try {
       mansory.layout();

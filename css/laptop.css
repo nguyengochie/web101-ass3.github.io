@@ -291,7 +291,6 @@ body p {
 .project-item-container {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid #e5e5e5 */
 }
 
 .circle-avatar {
@@ -333,6 +332,7 @@ body p {
     padding: 5px 10px;
     font-size: 12px;
     border: none;
+    color: #000;
 }
 
 .btn-view-more:hover {
