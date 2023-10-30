@@ -343,6 +343,16 @@ body p {
     visibility: hidden;
 }
 
+.deeplink {
+    color: black;
+    text-decoration: none;
+}
+
+.deeplink:hover {
+    color: #616161;
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 1080px) {
     .certi-info-item {
         grid-template-columns: 1fr;
